@@ -1,3 +1,6 @@
+from http.client import SWITCHING_PROTOCOLS
+
+
 price = int(input('Введите сумму покупки: '))
 i = 0
 if price < 1000:
