@@ -1,10 +1,11 @@
+from decimal import MIN_EMIN
+
+
 dicty = {"milk": 100, "vine": 1000, "meat": 300, "cheese": 350}
-mini, maxi, min_name, max_name = dicty["milk"], dicty["milk"], "milk", "milk"
+min, max = 2*128, 0
 for i, j in dicty.items():
-    if j < mini:
-        mini = j
+    if j < min:
         min_name = i
-    if j > maxi:
-        maxi = j
+    if j > max:
         max_name = i
 print(f'min -> {min_name}, max -> {max_name}')
