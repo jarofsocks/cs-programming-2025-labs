@@ -8,15 +8,18 @@ while 1:
         continue
     else:
         break
+    
 stavka += input_money/10000*0.003
 if stavka > 1.05:
     stavka = 1.05
 money = input_money
-for i in range(time_left):
-    if i+1 <= 3:
+
+for time_unit in range(time_left):
+    if time_unit+1 <= 3:
         money *= stavka + 0.03
-    elif i+1 <= 6:
+    elif time_unit+1 <= 6:
         money *= stavka + 0.05
-    elif i > 6:
+    elif time_unit+1 > 6:
         money *= stavka + 0.02
-print(money-input_money, 2)
+
+print(money-input_money)

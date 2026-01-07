@@ -4,6 +4,7 @@ frome = ino[0][-1]
 toe = ino[1]
 times = ['s','m','h']
 diff = times.index(toe) - times.index(frome)
+
 while diff != 0:
     if diff > 0:
         diff -= 1
@@ -13,4 +14,5 @@ while diff != 0:
         nume *= 60
     else:
         break
+
 print(str(round(nume, 3))+toe)
