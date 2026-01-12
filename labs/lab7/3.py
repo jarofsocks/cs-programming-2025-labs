@@ -4,12 +4,14 @@ personnel = [
     {"name": "Technician Reed", "clearance": 1}
 ]
 access_levels = {
-    "Restricted" : [1], 
-    "Confidential" : [2,3], 
-    "Top Secret" : [4,5,6]
+    '1' : "Restricted" ,
+    '2' : "Confidential",
+    '3' : "Confidential", 
+    '4' : "Top Secret",
+    '5' : "Top Secret",
+    '6' : "Top Secret",
 }
-personnel = map(lambda a, b : a['clearance'] in b['to'], personnel, access_levels["Restricted"])
-personnel = map(lambda a, b : a['clearance'] in b['to'], personnel, access_levels["Confidential"])
-personnel = map(lambda a, b : a['clearance'] in b['to'], personnel, access_levels["Top Secret"])
-for i in personnel:    
+
+clearence_personnel = map(lambda a : {'name' : a['name'], "clearance" : access_levels[f"{a["clearance"]}"]}, personnel)
+for i in clearence_personnel:
     print(i)

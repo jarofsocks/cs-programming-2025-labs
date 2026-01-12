@@ -16,7 +16,7 @@ reports = [
     {"author": "Operations Lead Grant", "text": "Emergency protocol draft shared via https://ops-share.scp"}
 ]
 
-bad_reports = list(filter(lambda x: 'http' in x["text"] or 'https' in x["text"], reports))
-fixed_bad_reports = list(map(lambda x : x['text'].split()[:-1], bad_reports['text']))
-for i in fixed_bad_reports:
+bad_reports = list(filter(lambda x: 'http' in x["text"], reports))
+for i in bad_reports:
+    i['text'] = f'{i['text'][:i['text'].index('http')]}{'[ДАННЫЕ УДАЛЕНЫ]'}'
     print(i)
