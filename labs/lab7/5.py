@@ -17,14 +17,6 @@ reports = [
 ]
 
 bad_reports = list(filter(lambda x: 'http' in x["text"] or 'https' in x["text"], reports))
-for i in bad_reports:
-    if 'http'    
-        indy = i['text'].index('https') 
-    except:
-        pass 
-    try:    
-        indy = i['text'].index('http') 
-    except:
-        pass 
+fixed_bad_reports = list(map(lambda x : x['text'].split()[:-1], bad_reports['text']))
+for i in fixed_bad_reports:
     print(i)
-del_data_reports = 
