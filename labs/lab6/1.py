@@ -1,17 +1,18 @@
-def time_convert(x,y):
-    from_x = x[-1] 
-    x = int(x[0::-1])
-    to_y = y
-    listy = ['h','m','s']
-    distance = (listy.index(from_x)) - (listy.index(to_y))
-    for i in range(abs(distance)):
-        if distance > 0:
-            if i == 1:
-                pass
-            else:
-                x /= 60
-        else:
-            x *= 60
-    return str(x)+y
-ino = input().split()
-print(time_convert(ino[0],ino[1]))
+ino = input().split(' ',1)
+nume = int(ino[0][:-1])
+frome = ino[0][-1]
+toe = ino[1]
+times = ['s','m','h']
+diff = times.index(toe) - times.index(frome)
+
+while diff != 0:
+    if diff > 0:
+        diff -= 1
+        nume /= 60
+    elif diff < 0:
+        diff += 1
+        nume *= 60
+    else:
+        break
+
+print(str(round(nume, 3))+toe)
